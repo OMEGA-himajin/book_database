@@ -91,7 +91,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version> <!-- 互換性のあるバージョンを指定 -->
 				<configuration>
 				    <source>20</source> <!-- Java 20 を使用 -->
                 	<target>20</target>
