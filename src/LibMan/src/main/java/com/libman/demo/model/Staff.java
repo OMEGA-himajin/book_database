@@ -8,26 +8,34 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Data
 @Entity
-@Table(name = "Staffs")
+@Data
+@Table(name = "staffs")
 public class Staff {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long accountId;
+    @Column(name = "StaffId", nullable = false, unique = true)
+    private Integer staffId;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "UserName", nullable = false, unique = true)
     private String userName;
 
-    @Column(nullable = false)
+    @Column(name = "Password", nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    @Column(name = "FirstName", nullable = false)
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(name = "FirstNameKana", nullable = false)
+    private String firstNameKana;
+
+    @Column(name = "LastName", nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
-    private boolean isEnable;
+    @Column(name = "LastNameKana", nullable = false)
+    private String lastNameKana;
+
+    @Column(name = "IsEnable", nullable = false)
+    private Boolean isEnable = true;
 }
